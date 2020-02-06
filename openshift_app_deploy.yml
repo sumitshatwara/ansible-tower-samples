@@ -1,0 +1,8 @@
+- name: Deploy Application in OpenShift 4
+  hosts: all
+  tasks:
+    - name: Deploy Application
+      command: "/usr/bin/oc new-app https://github.com/openshift/ruby-hello-world.git#beta4"
+    
+    - name: Expose Service
+      command: "/usr/bin/oc expose svc/ruby-hello-world"
