@@ -1,6 +1,9 @@
 - name: Deploy Application in OpenShift 4
   hosts: all
   tasks:
+    - name: Become root user
+      command: "sudo -i"
+      
     - name: Set Default project
       command: "/usr/bin/oc project default"
       
