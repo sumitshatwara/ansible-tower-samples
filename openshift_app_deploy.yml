@@ -3,8 +3,8 @@
   become: yes
   become_user: root
   tasks:
-    - name: Set Default project
-      command: "/usr/bin/oc project default"
+    - name: Set Tower project
+      command: "/usr/bin/oc project tower"
       
     - name: Deploy Application
       command: "/usr/bin/oc new-app https://github.com/openshift/ruby-hello-world.git#beta4"
