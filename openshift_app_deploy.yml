@@ -1,6 +1,9 @@
 - name: Deploy Application in OpenShift 4
   hosts: all
   tasks:
+    - name: Set Default project
+      command: "/usr/bin/oc project default"
+      
     - name: Deploy Application
       command: "/usr/bin/oc new-app https://github.com/openshift/ruby-hello-world.git#beta4"
     
