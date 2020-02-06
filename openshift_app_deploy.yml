@@ -3,8 +3,8 @@
   become: yes
   become_user: root
   tasks:
-    - name: Configure and Point to KUBECONFIG file
-      command: "export KUBECONFIG='/home/mmanjrek-redhat.com/ocp/auth/kubeconfig'"
+    #- name: Configure and Point to KUBECONFIG file
+    #  command: "export KUBECONFIG='/home/mmanjrek-redhat.com/ocp/auth/kubeconfig'"
          
     - name: Set Tower project
       command: "/usr/bin/oc project tower"
