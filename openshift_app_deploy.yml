@@ -1,11 +1,13 @@
 - name: Deploy Application in OpenShift 4
   hosts: all
+  become: yes
+  become_user: root
   tasks:
     - name: Set Default project
-      command: "sudo /usr/bin/oc project default"
+      command: "/usr/bin/oc project default"
       
     - name: Deploy Application
-      command: "sudo /usr/bin/oc new-app https://github.com/openshift/ruby-hello-world.git#beta4"
+      command: "/usr/bin/oc new-app https://github.com/openshift/ruby-hello-world.git#beta4"
     
     - name: Expose Service
-      command: "sudo /usr/bin/oc expose svc/ruby-hello-world"
+      command: "/usr/bin/oc expose svc/ruby-hello-world"
