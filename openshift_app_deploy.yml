@@ -4,13 +4,12 @@
   become_user: root
   tasks:
     #- name: Configure and Point to KUBECONFIG file
-    #  command: "export KUBECONFIG='/home/mmanjrek-redhat.com/ocp/auth/kubeconfig'"
-         
+    #  command: "export KUBECONFIG='/home/mmanjrek-redhat.com/ocp/auth/kubeconfig'"         
     - name: Set Tower project
-      command: "/usr/bin/oc project tower"
+      command: "oc project tower"
       
     - name: Deploy Application
-      command: "/usr/bin/oc new-app https://github.com/openshift/ruby-hello-world.git#beta4"
+      command: "oc new-app https://github.com/openshift/ruby-hello-world.git#beta4"
     
     - name: Expose Service
-      command: "/usr/bin/oc expose svc/ruby-hello-world"
+      command: "oc expose svc/ruby-hello-world"
